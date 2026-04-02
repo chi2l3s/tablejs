@@ -3,6 +3,7 @@ import chalk from 'chalk'
 import ora from 'ora'
 import { Command } from 'commander'
 import { askProjectOptions } from './prompts'
+import { generateProject, initGit, installDeps } from './generator'
 
 const program = new Command()
 
@@ -24,6 +25,7 @@ program
     const spinner = ora('Creating project structure').start()
 
     try {
+      await generateProject(targetDir, options)
       spinner.succeed('Project structure created')
     } catch (err) {
       spinner.fail('Failed to create project')
@@ -34,6 +36,7 @@ program
     if (options.installDeps) {
       const depSpinner = ora('Installing dependencies').start()
       try {
+        await installDeps(targetDir, options.packageManager)
         depSpinner.succeed('Dependencies installed')
       } catch {
         depSpinner.fail('Failed to install dependencies')
@@ -43,6 +46,7 @@ program
     if (options.initGit) {
       const gitSpinner = ora('Initializing git').start()
       try {
+        await initGit(targetDir)
         gitSpinner.succeed('Git initialized')
       } catch {
         gitSpinner.fail('Failed to initialize git')

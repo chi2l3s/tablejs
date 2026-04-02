@@ -1,0 +1,28 @@
+{
+  "name": "{{name}}",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "table build --platform {{platform}}",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@table/core": "latest",
+    "@table/ui": "latest",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@table/tsconfig": "latest",
+    "@types/react": "^19.2.4",
+    "@types/react-don": "^19.2.4",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@tailwindcss/vite": "^4.2.2",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3"
+  }
+}
