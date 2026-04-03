@@ -1,4 +1,4 @@
-import { Focusable, useParams, useRouter } from '@table/core'
+import { Focusable, useParams, useRouter } from '@table-js/core'
 
 interface MovieParams {
   id: string

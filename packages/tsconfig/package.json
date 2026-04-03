@@ -1,8 +1,19 @@
 {
-  "name": "@table/tsconfig",
+  "name": "@table-js/tsconfig",
   "version": "0.0.1",
-  "private": true,
+  "description": "Shared TypeScript config for Table.js",
+  "main": "base.json",
   "files": [
     "*.json"
-  ]
+  ],
+  "keywords": [
+    "typescript",
+    "tsconfig"
+  ],
+  "author": "Table.js Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tablejs/tablejs"
+  }
 }

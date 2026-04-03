@@ -1,9 +1,12 @@
 {
   "extends": "../tsconfig/base.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "outDir": "./dist",
-    "rootDir": "./src",
-    "ignoreDeprecations": "6.0"
+    "paths": {
+      "@table-js/core": ["../core/src/index.ts"]
+    },
+    "rootDir": ".."
   },
   "include": ["src"]
 }

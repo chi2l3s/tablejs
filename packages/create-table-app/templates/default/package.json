@@ -10,15 +10,15 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@table/core": "latest",
-    "@table/ui": "latest",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "@table-js/core": "latest",
+    "@table-js/ui": "latest",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
-    "@table/tsconfig": "latest",
-    "@types/react": "^19.2.4",
-    "@types/react-don": "^19.2.4",
+    "@table-js/platform": "latest",
+    "@types/react": "^19.2.3",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
     "@tailwindcss/vite": "^4.2.2",
     "tailwindcss": "^4.2.2",

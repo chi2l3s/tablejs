@@ -1,4 +1,4 @@
-import { Focusable, FocusGroup, useRouter } from '@table/core'
+import { Focusable, FocusGroup, useRouter } from '@table-js/core'
 
 const movies = [
   { id: '1', title: 'Inception' },

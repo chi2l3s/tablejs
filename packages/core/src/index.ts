@@ -7,6 +7,7 @@ export {
   useParams,
   useQuery,
   defineRoutes,
+  defineFileRoutes,
 } from './router'
 
 export type {
@@ -17,6 +18,7 @@ export type {
   RouteSegment,
   NavigateOptions,
 } from './router'
+export type { RouteModule, RouteModuleLoader } from './router'
 
 export {
   FocusProvider,
@@ -38,4 +40,7 @@ export type {
   FocusGroupType,
   FocusManagerOptions,
   FocusState,
+  UseFocusableOptions,
+  UseFocusableResult,
+  UseFocusGroupOptions,
 } from './focus'

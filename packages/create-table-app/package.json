@@ -1,26 +1,33 @@
 {
   "name": "create-table-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Create a new Table.js Smart TV app in one command",
   "bin": {
-    "create-table-app": "./dist/index.js"
+    "create-table-app": "./dist/index.mjs"
   },
+  "files": [
+    "dist",
+    "templates"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist"
   },
-  "files": [
-    "dist",
-    "templates"
+  "keywords": [
+    "smart-tv",
+    "create-app",
+    "cli",
+    "tizen",
+    "webos",
+    "android-tv"
   ],
-  "devDependencies": {
-    "@table/tsconfig": "workspace:*",
-    "@types/fs-extra": "^11.0.4",
-    "@types/prompts": "^2.4.9",
-    "tsup": "^8.5.1",
-    "typescript": "^6.0.2"
+  "author": "Table.js Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tablejs/tablejs"
   },
   "dependencies": {
     "chalk": "^5.6.2",
@@ -29,5 +36,13 @@
     "fs-extra": "^11.3.4",
     "ora": "^9.3.0",
     "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@table-js/platform": "workspace:*",
+    "@table-js/tsconfig": "workspace:*",
+    "@types/fs-extra": "^11.0.4",
+    "@types/prompts": "^2.4.9",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.2"
   }
 }

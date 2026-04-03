@@ -10,7 +10,7 @@ const TEMPLATE_DIR = path.join(
   'default',
 )
 
-const TEMPLATE_VARS = ['{{name}}', '{{plaform}}'] as const
+const TEMPLATE_VARS = ['{{name}}', '{{platform}}'] as const
 
 type TemplateVar = (typeof TEMPLATE_VARS)[number]
 
@@ -25,7 +25,7 @@ async function applyTemplateVars(filePath: string, values: TemplateValues): Prom
   let content = await fs.readFile(filePath, 'utf-8')
   let changed = false
 
-  for (const [key, value] of Object.entries(content)) {
+  for (const [key, value] of Object.entries(values)) {
     if (content.includes(key)) {
       content = content.replaceAll(key, value)
       changed = true
@@ -57,7 +57,7 @@ export async function generateProject(targetDir: string, options: ProjectOptions
 
   const values: TemplateValues = {
     '{{name}}': options.name,
-    '{{plaform}}': options.platform,
+    '{{platform}}': options.platform,
   }
 
   await walk(targetDir, values)

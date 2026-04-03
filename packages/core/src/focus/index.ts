@@ -12,3 +12,4 @@ export type {
   FocusManagerOptions,
   FocusState,
 } from './types'
+export type { UseFocusableOptions, UseFocusableResult, UseFocusGroupOptions } from './hooks'
