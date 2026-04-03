@@ -44,11 +44,19 @@ export function FocusGroup({
   ...options
 }: FocusGroupProps) {
   const { groupId } = useFocusGroup(options)
+  const css =
+    options.orientation === 'grid'
+      ? style
+      : {
+          display: 'flex',
+          flexDirection: options.orientation === 'vertical' ? 'column' : 'row',
+          ...style,
+        }
 
   return (
     <Tag
       className={className}
-      style={style}
+      style={css}
       data-focus-group={groupId}
     >
       {children}

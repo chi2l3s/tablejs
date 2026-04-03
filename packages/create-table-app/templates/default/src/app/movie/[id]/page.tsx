@@ -1,4 +1,5 @@
-import { Focusable, useParams, useRouter } from '@table-js/core'
+import { useParams, useRouter } from '@table-js/core'
+import { Button } from '@table-js/ui'
 
 interface MovieParams {
   id: string
@@ -10,19 +11,9 @@ export default function MoviePage() {
 
   return (
     <div className="min-h-screen bg-(--color-background) text-(--color-text-primary) p-16">
-      <Focusable onSelect={back} autoFocus>
-        {(focused) => (
-          <button
-            className={`
-              px-6 py-3 rounded-(--radius-button) bg-(--color-surface) mb-8
-              transition-colors duration-150
-              ${focused ? 'bg-(--color-surface-hover) outline-3 outline-(--color-accent)' : ''}
-            `}
-          >
-            ← Back
-          </button>
-        )}
-      </Focusable>
+      <Button className="mb-8" variant="secondary" onSelect={back} autoFocus>
+        ← Back
+      </Button>
       <h1 className="text-5xl font-bold">Movie #{id}</h1>
     </div>
   )

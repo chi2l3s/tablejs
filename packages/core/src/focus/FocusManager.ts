@@ -65,6 +65,11 @@ export class FocusManager {
     this.state.focusedId = id
     node.el.focus({ preventScroll: true })
     node.onFocus?.()
+    if (typeof window !== 'undefined') {
+      window.requestAnimationFrame(() => show(node.el))
+    } else {
+      show(node.el)
+    }
     this.options.onFocusChange?.(id)
   }
 
@@ -169,6 +174,16 @@ export class FocusManager {
   }
 }
 
+function show(el: HTMLElement) {
+  try {
+    el.scrollIntoView({
+      block: 'nearest',
+      inline: 'nearest',
+    })
+  } catch {
+    el.scrollIntoView()
+  }
+}
 
 function distance(
   from: DOMRect,

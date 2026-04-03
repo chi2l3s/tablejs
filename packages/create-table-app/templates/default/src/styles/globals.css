@@ -26,10 +26,6 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
-  overflow: hidden;
-}
-
-[data-focused="true"] {
-  outline: 3px solid var(--color-accent);
-  outline-offset: 3px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
