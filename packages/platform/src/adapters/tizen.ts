@@ -8,12 +8,11 @@ export class TizenAdapter implements PlatformAdapter {
   name = 'Tizen (Samsung)'
 
   async build(options: BuildOptions): Promise<void> {
-    const distDir = `${options.outDir}/tizen`
-    await this.createConfig(distDir)
+    await this.createConfig(options.dir)
   }
 
-  async package(distDir: string): Promise<string> {
-    const outputPath = path.join(distDir, '..', 'app.wgt')
+  async package(options: BuildOptions): Promise<string> {
+    const outputPath = path.join(options.dir, '..', 'app.wgt')
 
     await new Promise<void>((resolve, reject) => {
       const output = createWriteStream(outputPath)
@@ -23,7 +22,7 @@ export class TizenAdapter implements PlatformAdapter {
       archive.on('error', reject)
 
       archive.pipe(output)
-      archive.directory(distDir, false)
+      archive.directory(options.dir, false)
       archive.finalize()
     })
 

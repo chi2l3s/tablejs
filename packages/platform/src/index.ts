@@ -1,5 +1,5 @@
 export { build } from './builder'
-export type { Platform, BuildOptions, PlatformAdapter, ManifestBase } from './types'
+export type { Platform, Target, Mode, BuildOptions, PlatformAdapter, ManifestBase } from './types'
 export { TizenAdapter } from './adapters/tizen'
 export { WebOSAdapter } from './adapters/webos'
 export { AndroidAdapter } from './adapters/android'

@@ -1,16 +1,20 @@
 export type Platform = 'tizen' | 'webos' | 'android' | 'all'
+export type Target = Exclude<Platform, 'all'>
+export type Mode = 'webview' | 'native'
 
 export interface BuildOptions {
-  platform: Platform
+  platform: Target
   outDir: string
+  dir: string
   minify: boolean
+  mode: Mode
   sourcemap: boolean
 }
 
 export interface PlatformAdapter {
   name: string
   build(options: BuildOptions): Promise<void>
-  package(distDir: string): Promise<string>
+  package(options: BuildOptions): Promise<string>
 }
 
 export interface ManifestBase {

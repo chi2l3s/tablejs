@@ -12,6 +12,7 @@ program
   .command('build')
   .description('Build for target platform')
   .option('-p, --platform <platform>', 'Target platform (tizen, webos, android, all)', 'all')
+  .option('-m, --mode <mode>', 'Android mode (webview, native)', 'webview')
   .option('-o, --out <dir>', 'Output directory', 'dist')
   .option('--no-minify', 'Disable minification')
   .option('--sourcemap', 'Generate sourcemaps')
@@ -27,6 +28,7 @@ program
     try {
       await build(platform, {
         outDir: options.out,
+        mode: options.mode,
         minify: options.minify,
         sourcemap: options.sourcemap,
       })

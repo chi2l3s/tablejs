@@ -8,12 +8,11 @@ export class WebOSAdapter implements PlatformAdapter {
   name = 'webOS (LG)'
 
   async build(options: BuildOptions): Promise<void> {
-    const distDir = `${options.outDir}/webos`
-    await this.createAppInfo(distDir)
+    await this.createAppInfo(options.dir)
   }
 
-  async package(distDir: string): Promise<string> {
-    const outputPath = path.join(distDir, '..', 'app.ipk')
+  async package(options: BuildOptions): Promise<string> {
+    const outputPath = path.join(options.dir, '..', 'app.ipk')
 
     await new Promise<void>((resolve, reject) => {
       const output = createWriteStream(outputPath)
@@ -23,7 +22,7 @@ export class WebOSAdapter implements PlatformAdapter {
       archive.on('error', reject)
 
       archive.pipe(output)
-      archive.directory(distDir, false)
+      archive.directory(options.dir, false)
       archive.finalize()
     })
 
