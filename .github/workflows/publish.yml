@@ -50,9 +50,6 @@ jobs:
       - name: Bump package versions
         run: pnpm release:version
 
-      - name: Refresh lockfile
-        run: pnpm install --lockfile-only --no-frozen-lockfile
-
       - name: Publish packages
         run: pnpm -r --filter "./packages/*" publish --access public --no-git-checks
 
@@ -60,7 +57,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add package.json packages/*/package.json pnpm-lock.yaml
+          git add package.json packages/*/package.json
           if git diff --cached --quiet; then
             exit 0
           fi

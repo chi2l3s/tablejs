@@ -33,6 +33,9 @@ for (const manifest of manifests) {
 
     for (const dependencyName of Object.keys(deps)) {
       if (!workspacePackageNames.has(dependencyName)) continue
+      if (typeof deps[dependencyName] === 'string' && deps[dependencyName].startsWith('workspace:')) {
+        continue
+      }
       deps[dependencyName] = `^${nextVersion}`
     }
   }
