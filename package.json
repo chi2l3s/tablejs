@@ -1,6 +1,6 @@
 {
   "name": "tablejs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "The Smart TV application framework",
   "scripts": {
     "build": "turbo run build",

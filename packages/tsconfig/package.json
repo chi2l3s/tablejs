@@ -1,6 +1,6 @@
 {
   "name": "@table-js/tsconfig",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Shared TypeScript config for Table.js",
   "main": "base.json",
   "files": [
