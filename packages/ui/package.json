@@ -1,6 +1,6 @@
 {
   "name": "@table-js/ui",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Table.js UI components for Smart TV",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
