@@ -1,6 +1,6 @@
 {
   "name": "create-table-app",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Create a new Table.js Smart TV app in one command",
   "bin": {
     "create-table-app": "./dist/index.mjs"
